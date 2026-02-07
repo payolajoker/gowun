@@ -82,6 +82,18 @@ function App() {
           )}
         </div>
       )}
+
+      <footer className="attribution">
+        <p className="attribution-title">색 이름 출처</p>
+        <p className="attribution-text">
+          이 서비스는 <a href="https://oimu-seoul.com/product/%EC%83%89%EC%9D%B4%EB%A6%84-352-%EA%B0%9C%EC%A0%95%ED%8C%90/158/" target="_blank" rel="noopener noreferrer">OIMU의 『색이름 352』</a>에서
+          수집한 352가지 우리말 색이름을 사용합니다.
+        </p>
+        <p className="attribution-method">
+          색상 매칭은 CIELAB 색공간에서 Delta E(CIE76) 알고리즘을 사용하여
+          인간의 시각적 인지와 유사한 방식으로 가장 가까운 색을 찾습니다.
+        </p>
+      </footer>
     </div>
   );
 }

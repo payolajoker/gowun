@@ -249,3 +249,45 @@ body {
   box-shadow: 0 8px 24px rgba(230, 164, 160, 0.4);
   transform: translateY(-2px);
 }
+
+/* Attribution Footer */
+.attribution {
+  margin-top: 80px;
+  padding: 40px 24px;
+  border-top: 1px solid #333;
+  text-align: center;
+}
+
+.attribution-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.attribution-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.attribution-text a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.attribution-text a:hover {
+  color: var(--primary-light);
+  border-bottom-color: var(--primary-light);
+}
+
+.attribution-method {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.8;
+}
