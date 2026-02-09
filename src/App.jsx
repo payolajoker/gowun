@@ -4,15 +4,24 @@ import './App.css';
 import ImageUploader from './components/ImageUploader';
 import ColorResult from './components/ColorResult';
 import { extractColors, findClosestColor } from './utils/colorUtils';
+import { resizeImage } from './utils/imageUtils';
 
 function App() {
   const [image, setImage] = useState(null);
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleImageUpload = (imageDataUrl) => {
-    setImage(imageDataUrl);
-    processImage(imageDataUrl);
+  const handleImageUpload = async (file) => {
+    try {
+      setIsLoading(true);
+      const resizedImage = await resizeImage(file);
+      setImage(resizedImage);
+      processImage(resizedImage);
+    } catch (error) {
+      console.error("Image processing error:", error);
+      alert("이미지 처리 중 오류가 발생했습니다. 다른 이미지를 시도해주세요.");
+      setIsLoading(false);
+    }
   };
 
   const processImage = async (url) => {

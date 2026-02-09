@@ -15,12 +15,7 @@ const ImageUploader = ({ onImageUpload }) => {
 
     const processFile = (file) => {
         if (!file.type.startsWith('image/')) return;
-
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            onImageUpload(e.target.result);
-        };
-        reader.readAsDataURL(file);
+        onImageUpload(file);
     };
 
     const handleDragOver = (e) => {
@@ -55,6 +50,7 @@ const ImageUploader = ({ onImageUpload }) => {
                 type="file"
                 ref={fileInputRef}
                 onChange={handleFileChange}
+                onClick={(e) => (e.target.value = null)}
                 accept="image/*"
                 className="hidden"
             />
