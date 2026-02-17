@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import ImageUploader from './components/ImageUploader';
 import ColorResult from './components/ColorResult';
@@ -71,7 +70,7 @@ function App() {
           </div>
 
           {isLoading ? (
-            <p>색상을 분석하고 있습니다...</p>
+            <p className="loading-text">색상을 분석하고 있습니다...</p>
           ) : (
             <>
               <div className="results-grid">

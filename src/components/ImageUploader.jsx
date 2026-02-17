@@ -1,6 +1,4 @@
-
-import React, { useRef, useState } from 'react';
-import { Upload, Image as ImageIcon } from 'lucide-react';
+import { useRef, useState } from 'react';
 
 const ImageUploader = ({ onImageUpload }) => {
     const fileInputRef = useRef(null);
@@ -38,13 +36,11 @@ const ImageUploader = ({ onImageUpload }) => {
 
     return (
         <div
-            className={`relative border-2 border-dashed rounded-xl p-8 transition-all duration-300 flex flex-col items-center justify-center text-center cursor-pointer
-        ${isDragging ? 'border-primary bg-primary/5' : 'border-gray-300 hover:border-primary/50 hover:bg-gray-50'}`}
+            className={`uploader-container ${isDragging ? 'dragging' : ''}`}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
             onClick={() => fileInputRef.current?.click()}
-            style={{ minHeight: '300px' }}
         >
             <input
                 type="file"
@@ -52,19 +48,19 @@ const ImageUploader = ({ onImageUpload }) => {
                 onChange={handleFileChange}
                 onClick={(e) => (e.target.value = null)}
                 accept="image/*"
-                className="hidden"
+                style={{ display: 'none' }}
             />
 
-            <div className="bg-white p-4 rounded-full shadow-sm mb-4">
-                <Upload className="w-8 h-8 text-primary" />
+            <div className="icon-wrapper">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--primary-color)' }}>
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
             </div>
 
-            <h3 className="text-xl font-medium text-gray-800 mb-2">
-                이미지를 여기에 놓거나 클릭하세요
-            </h3>
-            <p className="text-gray-500 text-sm">
-                JPG, PNG 파일을 지원합니다
-            </p>
+            <h3>이미지를 여기에 놓거나 클릭하세요</h3>
+            <p>JPG, PNG 파일을 지원합니다</p>
         </div>
     );
 };

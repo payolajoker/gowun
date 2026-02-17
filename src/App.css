@@ -291,3 +291,100 @@ body {
   color: #666;
   line-height: 1.8;
 }
+
+/* Loading */
+.loading-text {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-top: 40px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 40px 16px;
+  }
+
+  .header {
+    margin-bottom: 36px;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .uploader-container {
+    padding: 48px 16px;
+    min-height: 200px;
+    margin-bottom: 36px;
+    border-radius: 16px;
+  }
+
+  .uploader-container h3 {
+    font-size: 1.1rem;
+  }
+
+  .icon-wrapper {
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .preview-container {
+    margin-bottom: 36px;
+    border-radius: 12px;
+  }
+
+  .preview-image {
+    max-height: 300px;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .color-swatches {
+    height: 100px;
+  }
+
+  .card-info {
+    padding: 16px;
+  }
+
+  .korean-name {
+    font-size: 1.1rem;
+  }
+
+  .reset-button {
+    margin-top: 36px;
+    padding: 14px 32px;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .attribution {
+    margin-top: 48px;
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .swatch {
+    font-size: 0.75rem;
+  }
+}
